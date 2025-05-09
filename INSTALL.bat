@@ -1,4 +1,3 @@
-@echo off
 SETLOCAL ENABLEEXTENSIONS
 
 :: === CONFIG ===
@@ -13,7 +12,7 @@ SET "7Z=%ProgramFiles%\7-Zip\7z.exe"
 IF NOT EXIST "%WORKDIR%" mkdir "%WORKDIR%"
 cd /d "%WORKDIR%"
 
-:: === DOWNLOAD FILE WITH REAL PROGRESS BAR ===
+:: === DOWNLOAD FILE WITH PROGRESS BAR ===
 echo.
 echo === DOWNLOADING %RAR_NAME% ===
 curl -# -L -o "%RAR_NAME%" "%DOWNLOAD_LINK%"
@@ -48,10 +47,10 @@ call :movefile "%DLCFOLDER%\dlc_north.scs" "Scandinavia"
 :: === COPY PATCH FILES TO bin folders ===
 echo.
 echo === COPYING PATCH FILES ===
-xcopy /Y "%DLCFOLDER%\steamapps\common\Euro Truck Simulator 2\bin\win_x64\*" "%TARGET%\bin\win_x64\" >nul
+xcopy /Y "%DLCFOLDER%\steamapps\common\Euro Truck Simulator 2\bin\win_x64\*" "%TARGET%\bin\win_x64\"
 echo bin\win_x64 FILES MOVED AND PASSED
 
-xcopy /Y "%DLCFOLDER%\steamapps\common\Euro Truck Simulator 2\bin\win_x86\*" "%TARGET%\bin\win_x86\" >nul
+xcopy /Y "%DLCFOLDER%\steamapps\common\Euro Truck Simulator 2\bin\win_x86\*" "%TARGET%\bin\win_x86\"
 echo bin\win_x86 FILES MOVED AND PASSED
 
 echo.
